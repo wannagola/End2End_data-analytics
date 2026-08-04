@@ -1,0 +1,29 @@
+# --- 데이터 ------------------------------------------------------------
+# 원본(66MB)과 정제 결과는 git 에 올리지 않는다. src/download.py 가 대신 받아온다.
+data/raw/
+data/processed/
+*.parquet
+!data/sample/*.parquet        # 테스트용 합성 샘플만 예외 (수백 KB)
+
+# --- 산출물 — 코드로 다시 만들 수 있다 ---------------------------------
+outputs/
+models/
+*.joblib
+*.png
+*.html
+*.csv
+*.json
+!requirements*.json
+
+# --- 환경 --------------------------------------------------------------
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.coverage
+htmlcov/
+.DS_Store
+.idea/
+.vscode/
