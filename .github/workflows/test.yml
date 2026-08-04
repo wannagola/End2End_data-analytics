@@ -1,0 +1,15 @@
+name: tests
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r requirements.txt
+      # 테스트는 합성 샘플로 돈다. 66MB 원본을 받지 않으므로 CI 가 빠르고 안정적이다.
+      - run: pytest --cov=src --cov-report=term-missing
